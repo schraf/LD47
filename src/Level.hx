@@ -1,8 +1,3 @@
-import en.LocalPlayerJammer;
-import en.Blocker;
-import en.Jammer;
-import en.Player;
-import h2d.Bitmap;
 
 class Level extends dn.Process {
 	public var game(get,never) : Game; inline function get_game() return Game.ME;
@@ -35,12 +30,12 @@ class Level extends dn.Process {
 
 			if (role == Enums.PlayerRole.Jammer) {
 				if (team == Enums.Team.A) {
-					new LocalPlayerJammer(team, spawner.cx, spawner.cy);
+					new en.LocalPlayerJammer(team, spawner.cx, spawner.cy);
 				} else {
-					new Jammer(team, spawner.cx, spawner.cy);
+					new en.AIJammer(team, spawner.cx, spawner.cy);
 				}
 			} else {
-				new Blocker(team, spawner.cx, spawner.cy);
+				new en.Blocker(team, spawner.cx, spawner.cy);
 			}
 		}
 

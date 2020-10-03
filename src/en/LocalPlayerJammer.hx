@@ -5,7 +5,6 @@ class LocalPlayerJammer extends Jammer {
 
   public function new(team: Team, x: Int, y: Int) {
     super(team, x, y);
-    controlledByLocalPlayer = true;
     ca = Main.ME.controller.createAccess("player");
   }
 

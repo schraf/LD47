@@ -7,8 +7,10 @@ class Const {
 	public static var UI_SCALE = 1.0;
 	public static var GRID = 16;
 
-	public static var BASE_PLAYER_SPEED = 0.08;
+	public static var BASE_PLAYER_SPEED = 0.04;
 	public static var PLAYER_WALL_BUMP = 0.18;
+	public static var PLAYER_BUMP = 0.18;
+	public static var PLAYER_HALF_WIDTH = 8;
 
 	static var _uniq = 0;
 	public static var NEXT_UNIQ(get,never) : Int; static inline function get_NEXT_UNIQ() return _uniq++;

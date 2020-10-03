@@ -11,7 +11,7 @@
 	"defaultPivotY": 0,
 	"defaultGridSize": 16,
 	"bgColor": "#7F8093",
-	"nextUid": 25,
+	"nextUid": 26,
 	"minifyJson": false,
 	"exportTiled": false,
 	"defs": {
@@ -406,8 +406,15 @@
 		],
 		"enums": [],
 		"externalEnums": [
-			{ "identifier": "Team", "uid": 18, "values": [ { "id": "A", "tileId": null }, { "id": "B", "tileId": null }, { "id": "Neutral", "tileId": null } ], "iconTilesetUid": null, "externalRelPath": "../src/Enums.hx", "externalFileChecksum": "62f8891c68d67fe79ae6ea45668e307e" },
-			{ "identifier": "PlayerRole", "uid": 19, "values": [ { "id": "Blocker", "tileId": null }, { "id": "Jammer", "tileId": null } ], "iconTilesetUid": null, "externalRelPath": "../src/Enums.hx", "externalFileChecksum": "62f8891c68d67fe79ae6ea45668e307e" }
+			{ "identifier": "Team", "uid": 18, "values": [ { "id": "A", "tileId": null }, { "id": "B", "tileId": null }, { "id": "Neutral", "tileId": null } ], "iconTilesetUid": null, "externalRelPath": "../src/Enums.hx", "externalFileChecksum": "d3d9a3f189982c7231b7a414fefe37cc" },
+			{ "identifier": "PlayerRole", "uid": 19, "values": [ { "id": "Blocker", "tileId": null }, { "id": "Jammer", "tileId": null } ], "iconTilesetUid": null, "externalRelPath": "../src/Enums.hx", "externalFileChecksum": "d3d9a3f189982c7231b7a414fefe37cc" },
+			{ "identifier": "TrackDirection", "uid": 25, "values": [
+				{ "id": "Down", "tileId": null },
+				{ "id": "Invalid", "tileId": null },
+				{ "id": "Left", "tileId": null },
+				{ "id": "Right", "tileId": null },
+				{ "id": "Up", "tileId": null }
+			], "iconTilesetUid": null, "externalRelPath": "../src/Enums.hx", "externalFileChecksum": "d3d9a3f189982c7231b7a414fefe37cc" }
 		]
 	},
 	"levels": [ {
@@ -681,8 +688,8 @@
 					{ "coordId": 14, "v": 0 },
 					{ "coordId": 15, "v": 0 },
 					{ "coordId": 16, "v": 0 },
-					{ "coordId": 17, "v": 2 },
-					{ "coordId": 18, "v": 2 },
+					{ "coordId": 17, "v": 1 },
+					{ "coordId": 18, "v": 1 },
 					{ "coordId": 19, "v": 2 },
 					{ "coordId": 20, "v": 2 },
 					{ "coordId": 21, "v": 2 },
@@ -698,8 +705,8 @@
 					{ "coordId": 31, "v": 0 },
 					{ "coordId": 32, "v": 0 },
 					{ "coordId": 33, "v": 1 },
-					{ "coordId": 34, "v": 2 },
-					{ "coordId": 35, "v": 2 },
+					{ "coordId": 34, "v": 1 },
+					{ "coordId": 35, "v": 1 },
 					{ "coordId": 36, "v": 2 },
 					{ "coordId": 37, "v": 2 },
 					{ "coordId": 38, "v": 2 },
@@ -710,12 +717,12 @@
 					{ "coordId": 43, "v": 2 },
 					{ "coordId": 44, "v": 2 },
 					{ "coordId": 45, "v": 2 },
-					{ "coordId": 46, "v": 4 },
+					{ "coordId": 46, "v": 2 },
 					{ "coordId": 47, "v": 0 },
 					{ "coordId": 48, "v": 0 },
 					{ "coordId": 49, "v": 1 },
 					{ "coordId": 50, "v": 1 },
-					{ "coordId": 51, "v": 2 },
+					{ "coordId": 51, "v": 1 },
 					{ "coordId": 52, "v": 2 },
 					{ "coordId": 53, "v": 2 },
 					{ "coordId": 54, "v": 2 },
@@ -725,7 +732,7 @@
 					{ "coordId": 58, "v": 2 },
 					{ "coordId": 59, "v": 2 },
 					{ "coordId": 60, "v": 2 },
-					{ "coordId": 61, "v": 4 },
+					{ "coordId": 61, "v": 2 },
 					{ "coordId": 62, "v": 4 },
 					{ "coordId": 63, "v": 0 },
 					{ "coordId": 64, "v": 0 },
@@ -858,7 +865,7 @@
 					{ "coordId": 191, "v": 0 },
 					{ "coordId": 192, "v": 0 },
 					{ "coordId": 193, "v": 1 },
-					{ "coordId": 194, "v": 1 },
+					{ "coordId": 194, "v": 3 },
 					{ "coordId": 195, "v": 3 },
 					{ "coordId": 196, "v": 3 },
 					{ "coordId": 197, "v": 3 },
@@ -868,12 +875,12 @@
 					{ "coordId": 201, "v": 3 },
 					{ "coordId": 202, "v": 3 },
 					{ "coordId": 203, "v": 3 },
-					{ "coordId": 204, "v": 3 },
+					{ "coordId": 204, "v": 4 },
 					{ "coordId": 205, "v": 4 },
 					{ "coordId": 206, "v": 4 },
 					{ "coordId": 207, "v": 0 },
 					{ "coordId": 208, "v": 0 },
-					{ "coordId": 209, "v": 1 },
+					{ "coordId": 209, "v": 3 },
 					{ "coordId": 210, "v": 3 },
 					{ "coordId": 211, "v": 3 },
 					{ "coordId": 212, "v": 3 },
@@ -885,7 +892,7 @@
 					{ "coordId": 218, "v": 3 },
 					{ "coordId": 219, "v": 3 },
 					{ "coordId": 220, "v": 3 },
-					{ "coordId": 221, "v": 3 },
+					{ "coordId": 221, "v": 4 },
 					{ "coordId": 222, "v": 4 },
 					{ "coordId": 223, "v": 0 },
 					{ "coordId": 224, "v": 0 },
@@ -901,8 +908,8 @@
 					{ "coordId": 234, "v": 3 },
 					{ "coordId": 235, "v": 3 },
 					{ "coordId": 236, "v": 3 },
-					{ "coordId": 237, "v": 3 },
-					{ "coordId": 238, "v": 3 },
+					{ "coordId": 237, "v": 4 },
+					{ "coordId": 238, "v": 4 },
 					{ "coordId": 239, "v": 0 },
 					{ "coordId": 240, "v": 0 },
 					{ "coordId": 241, "v": 0 },
@@ -924,6 +931,20 @@
 				"autoTiles": [ {
 					"ruleId": 5,
 					"results": [
+						{
+							"__cx": 2,
+							"__cy": 2,
+							"coordId": 34,
+							"tiles": [ { "tileId": 1, "__x": 32, "__y": 32, "__srcX": 16, "__srcY": 0 } ],
+							"flips": 0
+						},
+						{
+							"__cx": 2,
+							"__cy": 3,
+							"coordId": 50,
+							"tiles": [ { "tileId": 1, "__x": 32, "__y": 48, "__srcX": 16, "__srcY": 0 } ],
+							"flips": 0
+						},
 						{
 							"__cx": 2,
 							"__cy": 4,
@@ -971,13 +992,6 @@
 							"__cy": 10,
 							"coordId": 162,
 							"tiles": [ { "tileId": 1, "__x": 32, "__y": 160, "__srcX": 16, "__srcY": 0 } ],
-							"flips": 0
-						},
-						{
-							"__cx": 2,
-							"__cy": 11,
-							"coordId": 178,
-							"tiles": [ { "tileId": 1, "__x": 32, "__y": 176, "__srcX": 16, "__srcY": 0 } ],
 							"flips": 0
 						}
 					]

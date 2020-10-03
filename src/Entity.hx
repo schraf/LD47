@@ -242,13 +242,11 @@ class Entity {
 			xr+=step;
 
 			if (Game.ME.level.isCollision(cx+1,cy) && xr>=0.7) {
-				bdx -= Const.PLAYER_WALL_BUMP * dx;
 				xr = 0.7;
 				dx = 0; // stop movement
 			}
 
 			if (Game.ME.level.isCollision(cx-1,cy) && xr<=0.3) {
-				bdx += Const.PLAYER_WALL_BUMP * -dx;
 				xr = 0.3;
 				dx = 0; // stop movement
 			}
@@ -269,13 +267,11 @@ class Entity {
 			yr+=step;
 
 			if (Game.ME.level.isCollision(cx,cy+1) && yr>=0.7) {
-				bdy -= Const.PLAYER_WALL_BUMP * dy;
 				yr = 0.7;
 				dy = 0; // stop movement
 			}
 
 			if (Game.ME.level.isCollision(cx,cy-1) && yr<=0.3) {
-				bdy += Const.PLAYER_WALL_BUMP * -dy;
 				yr = 0.3;
 				dy = 0; // stop movement
 			}

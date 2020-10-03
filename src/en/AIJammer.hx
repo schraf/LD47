@@ -11,18 +11,21 @@ class AIJammer extends Jammer {
 
     switch (trackDir) {
       case Down:
-        dy += Const.BASE_PLAYER_SPEED * tmod;
+        dy += speed * tmod;
 
       case Up:
-        dy -= Const.BASE_PLAYER_SPEED * tmod;
+        dy -= speed * tmod;
 
       case Left:
-        dx -= Const.BASE_PLAYER_SPEED * tmod;
+        dx -= speed * tmod;
 
       case Right:
-        dx += Const.BASE_PLAYER_SPEED * tmod;
+        dx += speed * tmod;
 
       default:
     }
+
+    randomAttack();
+    debug('${trackDir} ${dx} ${dy}');
   }
 }

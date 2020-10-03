@@ -20,7 +20,7 @@ blockerB
   index: -1
 empty
   rotate: false
-  xy: 65, 20
+  xy: 5, 2
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
@@ -60,9 +60,23 @@ fxLineDir0
   orig: 33, 3
   offset: 0, 0
   index: -1
+fxShoveL
+  rotate: false
+  xy: 65, 20
+  size: 4, 9
+  orig: 4, 9
+  offset: 0, 0
+  index: -1
+fxShoveR
+  rotate: false
+  xy: 71, 20
+  size: 4, 9
+  orig: 4, 9
+  offset: 0, 0
+  index: -1
 fxSmallCircle0
   rotate: false
-  xy: 65, 23
+  xy: 70, 4
   size: 6, 6
   orig: 6, 6
   offset: 0, 0
@@ -72,6 +86,13 @@ fxSmoke0
   xy: 2, 18
   size: 44, 44
   orig: 44, 44
+  offset: 0, 0
+  index: -1
+fxSweat
+  rotate: false
+  xy: 70, 12
+  size: 5, 6
+  orig: 5, 6
   offset: 0, 0
   index: -1
 fxTail0

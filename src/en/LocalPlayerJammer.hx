@@ -21,19 +21,27 @@ class LocalPlayerJammer extends Jammer {
     var dir = level.getTrackDirection(cx, cy);
 
     if (ca.isDown(AXIS_LEFT_Y_POS) && dir != TrackDirection.Down) {
-      dy -= Const.BASE_PLAYER_SPEED * tmod;
+      dy -= speed * tmod;
     }
 
     if (ca.isDown(AXIS_LEFT_Y_NEG) && dir != TrackDirection.Up) {
-      dy += Const.BASE_PLAYER_SPEED * tmod;
+      dy += speed * tmod;
     }
 
     if (ca.isDown(AXIS_LEFT_X_POS) && dir != TrackDirection.Left) {
-      dx += Const.BASE_PLAYER_SPEED * tmod;
+      dx += speed * tmod;
     }
 
     if (ca.isDown(AXIS_LEFT_X_NEG) && dir != TrackDirection.Right) {
-      dx -= Const.BASE_PLAYER_SPEED * tmod;
+      dx -= speed * tmod;
+    }
+
+    if (ca.isPressed(X)) {
+      shove();
+    }
+
+    if (ca.isPressed(A)) {
+      boost();
     }
   }
 }

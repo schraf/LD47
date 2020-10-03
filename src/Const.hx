@@ -15,8 +15,17 @@ class Const {
 	public static var PLAYER_SEP_MOD = 0.01;
 	public static var PLAYER_COH_MOD = 0.006;
 	public static var PLAYER_AGN_MOD = 0.005;
-	public static var PLAYER_ADV_MOD = 0.2;
-	public static var PLAYER_RND_MOD = 0.001;
+	public static var PLAYER_ADV_MOD = 0.5;
+	public static var PLAYER_RND_MOD = 0.01;
+	public static var PLAYER_SHOVE_DIST = 2.0;
+	public static var PLAYER_SHOVE_STAM = 0.5;
+	public static var PLAYER_SHOVE_CD = 0.5;
+	public static var PLAYER_SHOVE_PWR = 0.3;
+	public static var PLAYER_AI_ATTACK_CD = 0.5;
+	public static var PLAYER_BOOST_MOD = 0.4;
+	public static var PLAYER_BOOST_CD = 1.0;
+	public static var PLAYER_BOOST_STAM = 0.7;
+	public static var PLAYER_STAM_REGEN = 0.01;
 
 	static var _uniq = 0;
 	public static var NEXT_UNIQ(get,never) : Int; static inline function get_NEXT_UNIQ() return _uniq++;

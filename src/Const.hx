@@ -11,6 +11,12 @@ class Const {
 	public static var PLAYER_WALL_BUMP = 0.18;
 	public static var PLAYER_BUMP = 0.18;
 	public static var PLAYER_HALF_WIDTH = 8;
+	public static var PLAYER_NEARBY_DIST = 3;
+	public static var PLAYER_SEP_MOD = 0.01;
+	public static var PLAYER_COH_MOD = 0.006;
+	public static var PLAYER_AGN_MOD = 0.005;
+	public static var PLAYER_ADV_MOD = 0.2;
+	public static var PLAYER_RND_MOD = 0.001;
 
 	static var _uniq = 0;
 	public static var NEXT_UNIQ(get,never) : Int; static inline function get_NEXT_UNIQ() return _uniq++;

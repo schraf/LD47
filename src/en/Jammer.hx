@@ -17,39 +17,35 @@ class Jammer extends Player {
   }
 
   function checkPassBlocker () {
-    var dir = level.getTrackDirection(cx, cy);
+    // TODO: there is a bug somewhere here
 
-    for (entity in Entity.ALL) {
-      if (entity != this && entity.is(Player)) {
-        var player = entity.as(Player);
+    for (player in nearbyPlayer) {
+      if (player.team != team && player.role == PlayerRole.Blocker) {
+        if (passed.contains(player))
+          continue;
 
-        if (player.team != team && player.role == PlayerRole.Blocker) {
-          if (passed.contains(player) || distCase(player) > 8)
-            continue;
+        switch (trackDir) {
+          case Down:
+            if (footY > player.footY) {
+              onPassedBlocker(player);
+            }
 
-          switch (dir) {
-            case Down:
-              if (footY > player.footY) {
-                onPassedBlocker(player);
-              }
+          case Up:
+            if (footY < player.footY) {
+              onPassedBlocker(player);
+            }
 
-            case Up:
-              if (footY < player.footY) {
-                onPassedBlocker(player);
-              }
+          case Left:
+            if (footX < player.footX) {
+              onPassedBlocker(player);
+            }
 
-            case Left:
-              if (footX < player.footX) {
-                onPassedBlocker(player);
-              }
+          case Right:
+            if (footX > player.footX) {
+              onPassedBlocker(player);
+            }
 
-            case Right:
-              if (footX > player.footX) {
-                onPassedBlocker(player);
-              }
-
-            default:
-          }
+          default:
         }
       }
     }
@@ -57,7 +53,7 @@ class Jammer extends Player {
 
   override function onFinishedLap() {
     super.onFinishedLap();
-    passed = new Array<Player>();
+    passed.resize(0);
   }
 
   override function update () {

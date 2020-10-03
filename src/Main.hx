@@ -10,34 +10,34 @@ class Main extends dn.Process {
 		super();
 		ME = this;
 
-        createRoot(s);
+		createRoot(s);
 
 		// Engine settings
 		hxd.Timer.wantedFPS = Const.FPS;
 		engine.backgroundColor = 0xff<<24|0x111133;
-        #if( hl && !debug )
-        engine.fullScreen = true;
-        #end
+		#if( hl && !debug )
+		engine.fullScreen = true;
+		#end
 
 		// Resources
 		#if(hl && debug)
 		hxd.Res.initLocal();
-        #else
-        hxd.Res.initEmbed();
-        #end
+		#else
+		hxd.Res.initEmbed();
+		#end
 
-        // Hot reloading
+		// Hot reloading
 		#if debug
-        hxd.res.Resource.LIVE_UPDATE = true;
-        hxd.Res.data.watch(function() {
-            delayer.cancelById("cdb");
+		hxd.res.Resource.LIVE_UPDATE = true;
+		hxd.Res.data.watch(function() {
+			delayer.cancelById("cdb");
 
-            delayer.addS("cdb", function() {
-            	Data.load( hxd.Res.data.entry.getBytes().toString() );
-            	if( Game.ME!=null )
-                    Game.ME.onCdbReload();
-            }, 0.2);
-        });
+			delayer.addS("cdb", function() {
+				Data.load( hxd.Res.data.entry.getBytes().toString() );
+				if( Game.ME!=null )
+					Game.ME.onCdbReload();
+			}, 0.2);
+		});
 		#end
 
 		// Assets & data init
@@ -87,8 +87,12 @@ class Main extends dn.Process {
 		Const.UI_SCALE = Const.SCALE;
 	}
 
-    override function update() {
+	override function update() {
 		Assets.tiles.tmod = tmod;
-        super.update();
-    }
+		super.update();
+
+		if (Game.ME != null && ca.isPressed(START)) {
+			Game.ME.togglePause();
+		}
+	}
 }

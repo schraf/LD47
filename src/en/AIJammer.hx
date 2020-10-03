@@ -7,6 +7,7 @@ class AIJammer extends Jammer {
 
   override function update (){
     super.update();
+    return;
 
     switch (trackDir) {
       case Down:

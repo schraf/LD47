@@ -1,6 +1,8 @@
+
 class Entity {
 	public static var ALL : Array<Entity> = [];
 	public static var GC : Array<Entity> = [];
+	public static var SCORES : Map<Enums.Team, en.Score> = new Map<Enums.Team, en.Score>();
 
 	public var game(get,never) : Game; inline function get_game() return Game.ME;
 	public var fx(get,never) : Fx; inline function get_fx() return Game.ME.fx;
@@ -84,6 +86,11 @@ class Entity {
 		cy = Std.int(y/Const.GRID);
 		xr = (x-cx*Const.GRID)/Const.GRID;
 		yr = (y-cy*Const.GRID)/Const.GRID;
+	}
+
+	public function setPixelOff(x:Int, y:Int) {
+		xr += x/Const.GRID;
+		yr += y/Const.GRID;
 	}
 
 	public function bump(x:Float,y:Float) {

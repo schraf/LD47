@@ -1,61 +1,68 @@
 
 tiles.png
-size: 128,64
+size: 256,64
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-car0
+blockerA
   rotate: false
-  xy: 48, 36
-  size: 16, 16
-  orig: 16, 16
+  xy: 216, 41
+  size: 9, 16
+  orig: 9, 16
+  offset: 0, 0
+  index: -1
+blockerB
+  rotate: false
+  xy: 227, 41
+  size: 9, 16
+  orig: 9, 16
   offset: 0, 0
   index: -1
 empty
   rotate: false
-  xy: 5, 2
+  xy: 65, 20
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 fxCircle0
   rotate: false
-  xy: 48, 18
+  xy: 198, 41
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 fxDot0
   rotate: false
-  xy: 45, 2
+  xy: 83, 31
   size: 3, 3
   orig: 3, 3
   offset: 0, 0
   index: -1
 fxImpact0
   rotate: false
-  xy: 37, 7
+  xy: 48, 20
   size: 15, 9
   orig: 15, 9
   offset: 0, 0
   index: -1
 fxLine0
   rotate: false
-  xy: 48, 54
+  xy: 198, 59
   size: 33, 3
   orig: 33, 3
   offset: 0, 0
   index: -1
 fxLineDir0
   rotate: false
-  xy: 48, 59
+  xy: 48, 31
   size: 33, 3
   orig: 33, 3
   offset: 0, 0
   index: -1
 fxSmallCircle0
   rotate: false
-  xy: 66, 46
+  xy: 65, 23
   size: 6, 6
   orig: 6, 6
   offset: 0, 0
@@ -74,6 +81,90 @@ fxTail0
   orig: 33, 11
   offset: 0, 0
   index: -1
+jammerA
+  rotate: false
+  xy: 48, 2
+  size: 9, 16
+  orig: 9, 16
+  offset: 0, 0
+  index: -1
+jammerB
+  rotate: false
+  xy: 59, 2
+  size: 9, 16
+  orig: 9, 16
+  offset: 0, 0
+  index: -1
+num0
+  rotate: false
+  xy: 63, 36
+  size: 13, 26
+  orig: 13, 26
+  offset: 0, 0
+  index: -1
+num1
+  rotate: false
+  xy: 78, 36
+  size: 13, 26
+  orig: 13, 26
+  offset: 0, 0
+  index: -1
+num2
+  rotate: false
+  xy: 93, 36
+  size: 13, 26
+  orig: 13, 26
+  offset: 0, 0
+  index: -1
+num3
+  rotate: false
+  xy: 108, 36
+  size: 13, 26
+  orig: 13, 26
+  offset: 0, 0
+  index: -1
+num4
+  rotate: false
+  xy: 168, 36
+  size: 13, 26
+  orig: 13, 26
+  offset: 0, 0
+  index: -1
+num5
+  rotate: false
+  xy: 123, 36
+  size: 13, 26
+  orig: 13, 26
+  offset: 0, 0
+  index: -1
+num6
+  rotate: false
+  xy: 138, 36
+  size: 13, 26
+  orig: 13, 26
+  offset: 0, 0
+  index: -1
+num7
+  rotate: false
+  xy: 153, 36
+  size: 13, 26
+  orig: 13, 26
+  offset: 0, 0
+  index: -1
+num8
+  rotate: false
+  xy: 48, 36
+  size: 13, 26
+  orig: 13, 26
+  offset: 0, 0
+  index: -1
+num9
+  rotate: false
+  xy: 183, 36
+  size: 13, 26
+  orig: 13, 26
+  offset: 0, 0
+  index: -1
 pixel
   rotate: false
   xy: 2, 2
@@ -83,14 +174,14 @@ pixel
   index: -1
 uiBar
   rotate: false
-  xy: 37, 2
+  xy: 233, 59
   size: 6, 3
   orig: 6, 3
   offset: 0, 0
   index: -1
 uiBarBg
   rotate: false
-  xy: 83, 57
+  xy: 37, 11
   size: 8, 5
   orig: 8, 5
   offset: 0, 0

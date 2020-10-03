@@ -1,19 +1,18 @@
 package en;
 
+import led.Entity;
+
 class Jammer extends Player {
   var passed: Array<Player>;
-  var score: Int;
 
   public function new (team: Team, x: Int, y: Int) {
     super(team, PlayerRole.Jammer, x, y);
-    score = 0;
     passed = new Array<Player>();
   }
 
   function onPassedBlocker (blocker: Player) {
     passed.push(blocker);
-    score++;
-    debug(score);
+    Entity.SCORES[team].onScore();
   }
 
   function checkPassBlocker () {

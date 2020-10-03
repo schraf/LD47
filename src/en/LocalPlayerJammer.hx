@@ -6,6 +6,8 @@ class LocalPlayerJammer extends Jammer {
   public function new(team: Team, x: Int, y: Int) {
     super(team, x, y);
     ca = Main.ME.controller.createAccess("player");
+    Game.ME.camera.trackTarget(this, true);
+    spr.set(Assets.tiles, "jammerA");
   }
 
   override function dispose() {

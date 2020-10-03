@@ -1,31 +1,33 @@
 package en;
 
 class AIJammer extends Jammer {
-  public function new(team: Team, x: Int, y: Int) {
-    super(team, x, y);
-    spr.set(Assets.tiles, "jammerB");
-  }
+	public function new(team: Team, x: Int, y: Int) {
+		super(team, x, y);
+		spr.set(Assets.tiles, "jammerB");
+	}
 
-  override function update (){
-    super.update();
+	override function update (){
+		super.update();
 
-    switch (trackDir) {
-      case Down:
-        dy += speed * tmod;
+		if (cd.has("bandage"))
+			return;
 
-      case Up:
-        dy -= speed * tmod;
+		switch (trackDir) {
+			case Down:
+				dy += speed * tmod;
 
-      case Left:
-        dx -= speed * tmod;
+			case Up:
+				dy -= speed * tmod;
 
-      case Right:
-        dx += speed * tmod;
+			case Left:
+				dx -= speed * tmod;
 
-      default:
-    }
+			case Right:
+				dx += speed * tmod;
 
-    randomAttack();
-    debug('${trackDir} ${dx} ${dy}');
-  }
+			default:
+		}
+
+		randomAttack();
+	}
 }

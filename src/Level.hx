@@ -10,6 +10,8 @@ class Level extends dn.Process {
 	var track: led.Layer_IntGrid_AutoLayer;
 	var trackDir: led.Layer_IntGrid;
 	var trackTiles: led.Layer_Tiles;
+	public var itemSpawners: Array<CPoint> = [];
+	public var teleportLocations: Array<CPoint> = [];
 
 	public function new() {
 		super(Game.ME);
@@ -44,6 +46,14 @@ class Level extends dn.Process {
 
 		for (score in entities.all_Score) {
 			new en.Score(score.f_Team, score.cx, score.cy);
+		}
+
+		for (itemSpawner in entities.all_ItemSpawner) {
+			itemSpawners.push(new CPoint(itemSpawner.cx, itemSpawner.cy));
+		}
+
+		for (teleportLocation in entities.all_TeleportLocations) {
+			teleportLocations.push(new CPoint(teleportLocation.cx, teleportLocation.cy));
 		}
 
 		invalidated = true;

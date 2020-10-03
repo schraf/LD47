@@ -13,7 +13,7 @@ blockerA
   index: -1
 blockerB
   rotate: false
-  xy: 227, 41
+  xy: 83, 18
   size: 9, 16
   orig: 9, 16
   offset: 0, 0
@@ -25,6 +25,13 @@ empty
   orig: 1, 1
   offset: 0, 0
   index: -1
+fxBandage
+  rotate: false
+  xy: 137, 24
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
 fxCircle0
   rotate: false
   xy: 198, 41
@@ -34,7 +41,7 @@ fxCircle0
   index: -1
 fxDot0
   rotate: false
-  xy: 83, 31
+  xy: 170, 31
   size: 3, 3
   orig: 3, 3
   offset: 0, 0
@@ -62,21 +69,21 @@ fxLineDir0
   index: -1
 fxShoveL
   rotate: false
-  xy: 65, 20
+  xy: 227, 48
   size: 4, 9
   orig: 4, 9
   offset: 0, 0
   index: -1
 fxShoveR
   rotate: false
-  xy: 71, 20
+  xy: 233, 53
   size: 4, 9
   orig: 4, 9
   offset: 0, 0
   index: -1
 fxSmallCircle0
   rotate: false
-  xy: 70, 4
+  xy: 239, 56
   size: 6, 6
   orig: 6, 6
   offset: 0, 0
@@ -90,7 +97,7 @@ fxSmoke0
   index: -1
 fxSweat
   rotate: false
-  xy: 70, 12
+  xy: 247, 56
   size: 5, 6
   orig: 5, 6
   offset: 0, 0
@@ -102,16 +109,51 @@ fxTail0
   orig: 33, 11
   offset: 0, 0
   index: -1
+itemBoot
+  rotate: false
+  xy: 149, 27
+  size: 9, 7
+  orig: 9, 7
+  offset: 0, 0
+  index: -1
+itemInvisible
+  rotate: false
+  xy: 127, 21
+  size: 8, 13
+  orig: 8, 13
+  offset: 0, 0
+  index: -1
+itemTNT
+  rotate: false
+  xy: 37, 6
+  size: 8, 10
+  orig: 8, 10
+  offset: 0, 0
+  index: -1
+itemTeleport
+  rotate: false
+  xy: 116, 19
+  size: 9, 15
+  orig: 9, 15
+  offset: 0, 0
+  index: -1
+itemTrap
+  rotate: false
+  xy: 65, 22
+  size: 16, 7
+  orig: 16, 7
+  offset: 0, 0
+  index: -1
 jammerA
   rotate: false
-  xy: 48, 2
+  xy: 94, 18
   size: 9, 16
   orig: 9, 16
   offset: 0, 0
   index: -1
 jammerB
   rotate: false
-  xy: 59, 2
+  xy: 105, 18
   size: 9, 16
   orig: 9, 16
   offset: 0, 0
@@ -195,14 +237,14 @@ pixel
   index: -1
 uiBar
   rotate: false
-  xy: 233, 59
+  xy: 198, 36
   size: 6, 3
   orig: 6, 3
   offset: 0, 0
   index: -1
 uiBarBg
   rotate: false
-  xy: 37, 11
+  xy: 160, 29
   size: 8, 5
   orig: 8, 5
   offset: 0, 0

@@ -18,6 +18,9 @@ class LocalPlayerJammer extends Jammer {
   override function update() {
     super.update();
 
+    if (cd.has("bandage"))
+      return;
+
     var dir = level.getTrackDirection(cx, cy);
 
     if (ca.isDown(AXIS_LEFT_Y_POS) && dir != TrackDirection.Down) {

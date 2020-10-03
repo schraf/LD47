@@ -17,3 +17,11 @@ enum TrackDirection {
   Right;
   Up;
 }
+
+enum ItemType {
+  SpeedBoost;
+  Teleport;
+  Explosion;
+  Invisibility;
+  SpeedTrap;
+}

@@ -31,6 +31,7 @@ class Game extends Process {
 		hud = new ui.Hud();
 
 		level.loadTrack();
+		delayer.addS("itemSpawner", spawnItem, Const.ITEM_SPAWN_TIMER + rnd(0.0, Const.ITEM_SPAWN_RND, true));
 
 		Process.resizeAll();
 		trace(Lang.t._("Game is ready."));
@@ -42,6 +43,38 @@ class Game extends Process {
 	override function onResize() {
 		super.onResize();
 		scroller.setScale(Const.SCALE);
+	}
+
+	function spawnItem () {
+		var off = irnd(0, level.itemSpawners.length-1);
+
+		for (i in 0...level.itemSpawners.length) {
+			var idx = (off+i) % level.itemSpawners.length;
+			var used = false;
+
+			for (item in Entity.ITEMS) {
+				if (item.spawner == idx) {
+					used = true;
+					break;
+				}
+			}
+
+			if (used)
+				continue;
+
+			var spawner = level.itemSpawners[idx];
+			var itemTypes = [
+				Enums.ItemType.SpeedBoost,
+				Enums.ItemType.Teleport,
+				Enums.ItemType.Explosion,
+				Enums.ItemType.Invisibility,
+				Enums.ItemType.SpeedTrap];
+			var itemType = itemTypes[irnd(0, itemTypes.length-1)];
+			new en.Item(itemType, idx, spawner.cx, spawner.cy);
+			break;
+		}
+
+		delayer.addS("itemSpawner", spawnItem, Const.ITEM_SPAWN_TIMER + rnd(0.0, Const.ITEM_SPAWN_RND, true));
 	}
 
 	function gc() {

@@ -32,5 +32,6 @@ class Score extends Entity {
     Std.downcast(flow.getChildAt(0), HSprite).set('num${d0}');
     Std.downcast(flow.getChildAt(1), HSprite).set('num${d1}');
     Std.downcast(flow.getChildAt(2), HSprite).set('num${d2}');
+    Assets.SFX.score(1);
   }
 }

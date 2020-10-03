@@ -2,7 +2,7 @@ class Const {
 	public static var FPS = 60;
 	public static var FIXED_FPS = 30;
 	public static var AUTO_SCALE_TARGET_WID = 512; // -1 to disable auto-scaling on width
-	public static var AUTO_SCALE_TARGET_HEI = 256; // -1 to disable auto-scaling on height
+	public static var AUTO_SCALE_TARGET_HEI = -1; // -1 to disable auto-scaling on height
 	public static var SCALE = 1.0; // ignored if auto-scaling
 	public static var UI_SCALE = 1.0;
 	public static var GRID = 16;
@@ -11,7 +11,7 @@ class Const {
 	public static var PLAYER_WALL_BUMP = 0.18;
 	public static var PLAYER_BUMP = 0.18;
 	public static var PLAYER_HALF_WIDTH = 8;
-	public static var PLAYER_NEARBY_DIST = 3;
+	public static var PLAYER_NEARBY_DIST = 4;
 	public static var PLAYER_SEP_MOD = 0.01;
 	public static var PLAYER_COH_MOD = 0.006;
 	public static var PLAYER_AGN_MOD = 0.005;
@@ -26,6 +26,13 @@ class Const {
 	public static var PLAYER_BOOST_CD = 1.0;
 	public static var PLAYER_BOOST_STAM = 0.7;
 	public static var PLAYER_STAM_REGEN = 0.01;
+	public static var ITEM_SPAWN_TIMER = 12.0;
+	public static var ITEM_SPAWN_RND = 3.0;
+	public static var ITEM_PICKUP_DIST = 1.0;
+	public static var ITEM_SPEEDBOOST_MOD = 5.0;
+	public static var ITEM_EXPLOSION_PWR = 1.0;
+	public static var ITEM_INVISIBLE_TIME = 4.0;
+	public static var ITEM_TRAP_TIME = 3.0;
 
 	static var _uniq = 0;
 	public static var NEXT_UNIQ(get,never) : Int; static inline function get_NEXT_UNIQ() return _uniq++;

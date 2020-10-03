@@ -11,7 +11,7 @@
 	"defaultPivotY": 0,
 	"defaultGridSize": 16,
 	"bgColor": "#7F8093",
-	"nextUid": 31,
+	"nextUid": 33,
 	"minifyJson": false,
 	"exportTiled": false,
 	"defs": {
@@ -372,6 +372,38 @@
 						"defaultOverride": null
 					}
 				]
+			},
+			{
+				"identifier": "ItemSpawner",
+				"uid": 31,
+				"width": 16,
+				"height": 16,
+				"color": "#94D9B3",
+				"renderMode": "Ellipse",
+				"tilesetId": null,
+				"tileId": null,
+				"tileRenderMode": "Stretch",
+				"maxPerLevel": 0,
+				"limitBehavior": "DiscardOldOnes",
+				"pivotX": 0.5,
+				"pivotY": 0.5,
+				"fieldDefs": []
+			},
+			{
+				"identifier": "TeleportLocations",
+				"uid": 32,
+				"width": 16,
+				"height": 16,
+				"color": "#512CD8",
+				"renderMode": "Cross",
+				"tilesetId": null,
+				"tileId": null,
+				"tileRenderMode": "Stretch",
+				"maxPerLevel": 0,
+				"limitBehavior": "DiscardOldOnes",
+				"pivotX": 0.5,
+				"pivotY": 0.5,
+				"fieldDefs": []
 			}
 		],
 		"tilesets": [
@@ -660,7 +692,19 @@
 							"id": "V_String",
 							"params": [ "A" ]
 						} ]
-					} ] }
+					} ] },
+					{ "__identifier": "ItemSpawner", "__cx": 17, "__cy": 13, "defUid": 31, "x": 280, "y": 216, "fieldInstances": [] },
+					{ "__identifier": "ItemSpawner", "__cx": 22, "__cy": 2, "defUid": 31, "x": 360, "y": 40, "fieldInstances": [] },
+					{ "__identifier": "ItemSpawner", "__cx": 2, "__cy": 8, "defUid": 31, "x": 40, "y": 136, "fieldInstances": [] },
+					{ "__identifier": "ItemSpawner", "__cx": 8, "__cy": 13, "defUid": 31, "x": 136, "y": 216, "fieldInstances": [] },
+					{ "__identifier": "ItemSpawner", "__cx": 9, "__cy": 2, "defUid": 31, "x": 152, "y": 40, "fieldInstances": [] },
+					{ "__identifier": "TeleportLocations", "__cx": 5, "__cy": 2, "defUid": 32, "x": 88, "y": 40, "fieldInstances": [] },
+					{ "__identifier": "TeleportLocations", "__cx": 5, "__cy": 12, "defUid": 32, "x": 88, "y": 200, "fieldInstances": [] },
+					{ "__identifier": "TeleportLocations", "__cx": 13, "__cy": 12, "defUid": 32, "x": 216, "y": 200, "fieldInstances": [] },
+					{ "__identifier": "TeleportLocations", "__cx": 19, "__cy": 2, "defUid": 32, "x": 312, "y": 40, "fieldInstances": [] },
+					{ "__identifier": "TeleportLocations", "__cx": 28, "__cy": 8, "defUid": 32, "x": 456, "y": 136, "fieldInstances": [] },
+					{ "__identifier": "TeleportLocations", "__cx": 22, "__cy": 13, "defUid": 32, "x": 360, "y": 216, "fieldInstances": [] },
+					{ "__identifier": "TeleportLocations", "__cx": 2, "__cy": 7, "defUid": 32, "x": 40, "y": 120, "fieldInstances": [] }
 				]
 			},
 			{

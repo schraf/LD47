@@ -9,6 +9,9 @@ class Blocker extends Player {
 	override function update () {
 		super.update();
 
+		if (cd.has("bandage"))
+			return;
+
 		var nearJammer = false;
 
 		// flocking beharior with other blockers

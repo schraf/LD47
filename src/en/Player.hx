@@ -9,6 +9,7 @@ class Player extends Entity {
 	var stamina: Float;
 	var sweatSpr: HSprite;
 	var boostSpr: HSprite;
+	var bandageSpr: HSprite;
 
 	public var trackDir(get,never) : TrackDirection; inline function get_trackDir() return level.getTrackDirection(cx, cy);
 
@@ -32,8 +33,10 @@ class Player extends Entity {
 		nearbyItems = new Array<Item>();
 		sweatSpr = new HSprite(Assets.tiles, "fxSweat");
 		boostSpr = new HSprite(Assets.tiles, "fxImpact0");
+		bandageSpr = new HSprite(Assets.tiles, "fxBandage");
 
 		sweatSpr.setPosition(0.15*Const.GRID, -0.9*Const.GRID);
+		bandageSpr.setPosition(0.05*Const.GRID, -0.9*Const.GRID);
 
 		boostSpr.setPosition(-0.8*Const.GRID, -0.3*Const.GRID);
 		boostSpr.scale(0.5);
@@ -101,12 +104,24 @@ class Player extends Entity {
 		for (entity in Entity.ALL) {
 			if (entity != this && distCase(entity) <= Const.PLAYER_NEARBY_DIST) {
 				if (entity.is(Player)) {
+					if (entity.cd.has("invisible"))
+						continue;
+
 					nearbyPlayer.push(entity.as(Player));
 				} else if (entity.is(Item)) {
 					nearbyItems.push(entity.as(Item));
 				}
 			}
 		}
+	}
+
+	public function addBandage (s: Float) {
+		if (bandageSpr.parent == null)
+			spr.addChild(bandageSpr);
+
+		cancelVelocities();
+
+		cd.setS("bandage", s, function () bandageSpr.remove());
 	}
 
 	public function removeStamina (amount: Float): Bool {
@@ -184,7 +199,8 @@ class Player extends Entity {
 		updateNearbyEntities();
 		checkEntityCollision();
 
-		stamina = Math.min(stamina + Const.PLAYER_STAM_REGEN, 1.0);
+		if (!cd.has("bandage"))
+			stamina = Math.min(stamina + Const.PLAYER_STAM_REGEN, 1.0);
 
 		set_dir(dxTotal < 0.0 ? -1 : 1);
 

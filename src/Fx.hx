@@ -1,3 +1,4 @@
+import h3d.Engine;
 import h2d.Sprite;
 import dn.heaps.HParticle;
 import dn.Tweenie;
@@ -144,6 +145,19 @@ class Fx extends dn.Process {
 		p.dx = 3.0*dir;
 		p.dy = t.centerY < e.centerY ? -0.2 : 0.2;
 		p.frict = 0.6;
+	}
+
+	public function smoke (e: Entity) {
+		for (i in 0...5) {
+			var p = allocTopAdd(getTile("fxSmoke0"), e.centerX + rnd(0.3, 2.2, true), e.centerY + rnd(0.3, 2.2, true));
+			p.dx = rnd(0.05, 0.3, true);
+			p.dy -= rnd(0.1, 0.3);
+			p.frict = 0.96;
+			p.r = rnd(0, 6.28);
+			p.dr = rnd(0.0, 0.1, true);
+			p.setScale(rnd(0.5, 0.6, true));
+			p.setFadeS(rnd(0.1, 0.4), 0.0, rnd(1.0, 1.5));
+		}
 	}
 
 	override function update() {

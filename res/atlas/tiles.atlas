@@ -1,89 +1,96 @@
 
 tiles.png
-size: 64,128
+size: 128,64
 format: RGBA8888
-filter: Linear,Linear
+filter: Nearest,Nearest
 repeat: none
+car0
+  rotate: false
+  xy: 48, 36
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
 empty
   rotate: false
-  xy: 62, 18
+  xy: 5, 2
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 fxCircle0
   rotate: false
-  xy: 46, 1
+  xy: 48, 18
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 fxDot0
   rotate: false
-  xy: 53, 35
+  xy: 45, 2
   size: 3, 3
   orig: 3, 3
   offset: 0, 0
   index: -1
 fxImpact0
   rotate: false
-  xy: 46, 18
+  xy: 37, 7
   size: 15, 9
   orig: 15, 9
   offset: 0, 0
   index: -1
 fxLine0
   rotate: false
-  xy: 1, 58
+  xy: 48, 54
   size: 33, 3
   orig: 33, 3
   offset: 0, 0
   index: -1
 fxLineDir0
   rotate: false
-  xy: 1, 62
+  xy: 48, 59
   size: 33, 3
   orig: 33, 3
   offset: 0, 0
   index: -1
 fxSmallCircle0
   rotate: false
-  xy: 55, 28
+  xy: 66, 46
   size: 6, 6
   orig: 6, 6
   offset: 0, 0
   index: -1
 fxSmoke0
   rotate: false
-  xy: 1, 1
+  xy: 2, 18
   size: 44, 44
   orig: 44, 44
   offset: 0, 0
   index: -1
 fxTail0
   rotate: false
-  xy: 1, 46
+  xy: 2, 5
   size: 33, 11
   orig: 33, 11
   offset: 0, 0
   index: -1
 pixel
   rotate: false
-  xy: 62, 20
+  xy: 2, 2
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 uiBar
   rotate: false
-  xy: 46, 34
+  xy: 37, 2
   size: 6, 3
   orig: 6, 3
   offset: 0, 0
   index: -1
 uiBarBg
   rotate: false
-  xy: 46, 28
+  xy: 83, 57
   size: 8, 5
   orig: 8, 5
   offset: 0, 0

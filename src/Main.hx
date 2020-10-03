@@ -49,10 +49,12 @@ class Main extends dn.Process {
 		// Game controller
 		controller = new dn.heaps.Controller(s);
 		ca = controller.createAccess("main");
-		controller.bind(AXIS_LEFT_X_NEG, Key.LEFT, Key.Q, Key.A);
+		controller.bind(AXIS_LEFT_X_NEG, Key.LEFT, Key.A);
 		controller.bind(AXIS_LEFT_X_POS, Key.RIGHT, Key.D);
+		controller.bind(AXIS_LEFT_Y_NEG, Key.DOWN, Key.S);
+		controller.bind(AXIS_LEFT_Y_POS, Key.UP, Key.W);
 		controller.bind(X, Key.SPACE, Key.F, Key.E);
-		controller.bind(A, Key.UP, Key.Z, Key.W);
+		controller.bind(A, Key.C);
 		controller.bind(B, Key.ENTER, Key.NUMPAD_ENTER);
 		controller.bind(SELECT, Key.R);
 		controller.bind(START, Key.N);

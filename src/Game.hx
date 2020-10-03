@@ -1,3 +1,5 @@
+import en.Jammer;
+import en.Player;
 import dn.Process;
 import hxd.Key;
 
@@ -39,7 +41,6 @@ class Game extends Process {
 		super.onResize();
 		scroller.setScale(Const.SCALE);
 	}
-
 
 	function gc() {
 		if( Entity.GC==null || Entity.GC.length==0 )

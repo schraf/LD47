@@ -1,6 +1,6 @@
 class Entity {
-    public static var ALL : Array<Entity> = [];
-    public static var GC : Array<Entity> = [];
+	public static var ALL : Array<Entity> = [];
+	public static var GC : Array<Entity> = [];
 
 	public var game(get,never) : Game; inline function get_game() return Game.ME;
 	public var fx(get,never) : Fx; inline function get_fx() return Game.ME.fx;
@@ -13,15 +13,15 @@ class Entity {
 	public var cd : dn.Cooldown;
 
 	public var uid : Int;
-    public var cx = 0;
-    public var cy = 0;
-    public var xr = 0.5;
-    public var yr = 1.0;
+	public var cx = 0;
+	public var cy = 0;
+	public var xr = 0.5;
+	public var yr = 1.0;
 
-    public var dx = 0.;
-    public var dy = 0.;
-    public var bdx = 0.;
-    public var bdy = 0.;
+	public var dx = 0.;
+	public var dy = 0.;
+	public var bdx = 0.;
+	public var bdy = 0.;
 	public var dxTotal(get,never) : Float; inline function get_dxTotal() return dx+bdx;
 	public var dyTotal(get,never) : Float; inline function get_dyTotal() return dy+bdy;
 	public var frict = 0.82;
@@ -34,7 +34,7 @@ class Entity {
 	public var sprScaleY = 1.0;
 	public var entityVisible = true;
 
-    public var spr : HSprite;
+	public var spr : HSprite;
 	public var colorAdd : h3d.Vector;
 	var debugLabel : Null<h2d.Text>;
 
@@ -47,18 +47,18 @@ class Entity {
 
 	var actions : Array<{ id:String, cb:Void->Void, t:Float }> = [];
 
-    public function new(x:Int, y:Int) {
-        uid = Const.NEXT_UNIQ;
-        ALL.push(this);
+	public function new(x:Int, y:Int) {
+		uid = Const.NEXT_UNIQ;
+		ALL.push(this);
 
 		cd = new dn.Cooldown(Const.FPS);
-        setPosCase(x,y);
+		setPosCase(x,y);
 
-        spr = new HSprite(Assets.tiles);
-        Game.ME.scroller.add(spr, Const.DP_MAIN);
+		spr = new HSprite(Assets.tiles);
+		Game.ME.scroller.add(spr, Const.DP_MAIN);
 		spr.colorAdd = colorAdd = new h3d.Vector();
 		spr.setCenterRatio(0.5,1);
-    }
+	}
 
 	inline function set_dir(v) {
 		return dir = v>0 ? 1 : v<0 ? -1 : dir;
@@ -115,15 +115,15 @@ class Entity {
 
 	public function makePoint() return new CPoint(cx,cy, xr,yr);
 
-    public inline function destroy() {
-        if( !destroyed ) {
-            destroyed = true;
-            GC.push(this);
-        }
-    }
+	public inline function destroy() {
+		if( !destroyed ) {
+			destroyed = true;
+			GC.push(this);
+		}
+	}
 
-    public function dispose() {
-        ALL.remove(this);
+	public function dispose() {
+		ALL.remove(this);
 
 		colorAdd = null;
 
@@ -137,7 +137,7 @@ class Entity {
 
 		cd.destroy();
 		cd = null;
-    }
+	}
 
 	public inline function debugFloat(v:Float, ?c=0xffffff) {
 		debug( pretty(v), c );
@@ -207,16 +207,16 @@ class Entity {
 	}
 
 
-    public function preUpdate() {
+	public function preUpdate() {
 		cd.update(tmod);
 		updateActions();
-    }
+	}
 
-    public function postUpdate() {
-        spr.x = (cx+xr)*Const.GRID;
-        spr.y = (cy+yr)*Const.GRID;
-        spr.scaleX = dir*sprScaleX;
-        spr.scaleY = sprScaleY;
+	public function postUpdate() {
+		spr.x = (cx+xr)*Const.GRID;
+		spr.y = (cy+yr)*Const.GRID;
+		spr.scaleX = dir*sprScaleX;
+		spr.scaleY = sprScaleY;
 		spr.visible = entityVisible;
 
 		if( debugLabel!=null ) {
@@ -227,14 +227,24 @@ class Entity {
 
 	public function fixedUpdate() {} // runs at a "guaranteed" 30 fps
 
-    public function update() { // runs at an unknown fps
+	public function update() { // runs at an unknown fps
 		// X
 		var steps = M.ceil( M.fabs(dxTotal*tmod) );
 		var step = dxTotal*tmod / steps;
-		while( steps>0 ) {
+		while ( steps>0 ) {
 			xr+=step;
 
-			// [ add X collisions checks here ]
+			if (Game.ME.level.isCollision(cx+1,cy) && xr>=0.7) {
+				bdx -= Const.PLAYER_WALL_BUMP * dx;
+				xr = 0.7;
+				dx = 0; // stop movement
+			}
+
+			if (Game.ME.level.isCollision(cx-1,cy) && xr<=0.3) {
+				bdx += Const.PLAYER_WALL_BUMP * -dx;
+				xr = 0.3;
+				dx = 0; // stop movement
+			}
 
 			while( xr>1 ) { xr--; cx++; }
 			while( xr<0 ) { xr++; cx--; }
@@ -251,7 +261,17 @@ class Entity {
 		while( steps>0 ) {
 			yr+=step;
 
-			// [ add Y collisions checks here ]
+			if (Game.ME.level.isCollision(cx,cy+1) && yr>=0.7) {
+				bdy -= Const.PLAYER_WALL_BUMP * dy;
+				yr = 0.7;
+				dy = 0; // stop movement
+			}
+
+			if (Game.ME.level.isCollision(cx,cy-1) && yr<=0.3) {
+				bdy += Const.PLAYER_WALL_BUMP * -dy;
+				yr = 0.3;
+				dy = 0; // stop movement
+			}
 
 			while( yr>1 ) { yr--; cy++; }
 			while( yr<0 ) { yr++; cy--; }
@@ -261,5 +281,5 @@ class Entity {
 		bdy*=Math.pow(bumpFrict,tmod);
 		if( M.fabs(dy)<=0.0005*tmod ) dy = 0;
 		if( M.fabs(bdy)<=0.0005*tmod ) bdy = 0;
-    }
+	}
 }

@@ -1,0 +1,1 @@
+private typedef _Tmp = haxe.macro.MacroType<[led.Project.build("art/levels.json")]>;

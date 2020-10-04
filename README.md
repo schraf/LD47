@@ -31,6 +31,14 @@ To add some spice to the gameplay, I added in item spawning at random-ish locati
 * **Bomb** (<img src="art/itemTNT.png" style="image-rendering: pixelated;" height="16px">) - Pushes nearby players away from you.
 * **Trap** (<img src="art/itemTrap.png" style="image-rendering: pixelated;" height="16px">) - Enstares the player for a short amount of time.
 
+## Screenshots
+
+![screen0](screenshots/screen0.png)
+
+![screen1](screenshots/screen1.png)
+
+![gameplay](screenshots/gameplay.gif)
+
 # Development
 
 The Ludum Dare Compo challenge is a 48 hour event where a single person must create a game from scratch based on a theme that is announced at the start of the event. Here is a list of development libraries that I used for this project:

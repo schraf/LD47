@@ -24,8 +24,8 @@ class Const {
 	public static var PLAYER_AI_ATTACK_CD = 0.5;
 	public static var PLAYER_BOOST_MOD = 0.4;
 	public static var PLAYER_BOOST_CD = 1.0;
-	public static var PLAYER_BOOST_STAM = 0.7;
-	public static var PLAYER_STAM_REGEN = 0.01;
+	public static var PLAYER_BOOST_STAM = 1.0;
+	public static var PLAYER_STAM_REGEN = 0.005;
 	public static var ITEM_SPAWN_TIMER = 12.0;
 	public static var ITEM_SPAWN_RND = 3.0;
 	public static var ITEM_PICKUP_DIST = 1.0;

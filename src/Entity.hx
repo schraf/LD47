@@ -237,6 +237,10 @@ class Entity {
 	public function fixedUpdate() {} // runs at a "guaranteed" 30 fps
 
 	public function update() { // runs at an unknown fps
+		// TODO: figure out how bdx/bdy are getting set to NaN
+		if (Math.isNaN(bdx) || Math.isNaN(bdx))
+			bdx = bdy = 0.0;
+
 		// X
 		var steps = M.ceil( M.fabs(dxTotal*tmod) );
 		var step = dxTotal*tmod / steps;

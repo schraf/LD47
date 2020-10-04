@@ -9,6 +9,9 @@ class Blocker extends Player {
 	}
 
 	override function update () {
+		if (ui.Console.ME.hasFlag("disableai"))
+			return;
+
 		super.update();
 
 		if (cd.has("bandage") || cd.has("frozen"))

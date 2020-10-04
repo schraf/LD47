@@ -6,6 +6,9 @@ class AIJammer extends Jammer {
 	}
 
 	override function update (){
+		if (ui.Console.ME.hasFlag("disableai"))
+			return;
+
 		super.update();
 
 		if (cd.has("bandage") || cd.has("frozen"))

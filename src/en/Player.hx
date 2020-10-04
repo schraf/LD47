@@ -11,6 +11,7 @@ class Player extends Entity {
 	var boostSpr: HSprite;
 	var bandageSpr: HSprite;
 	var frozenSpr: HSprite;
+	var shoveSpr: HSprite;
 
 	public var trackDir(get,never) : TrackDirection; inline function get_trackDir() return level.getTrackDirection(cx, cy);
 
@@ -36,6 +37,7 @@ class Player extends Entity {
 		boostSpr = new HSprite(Assets.tiles, "fxImpact0");
 		bandageSpr = new HSprite(Assets.tiles, "fxBandage");
 		frozenSpr = new HSprite(Assets.tiles, "fxFreeze");
+		shoveSpr = new HSprite(Assets.tiles);
 
 		sweatSpr.setPosition(0.15*Const.GRID, -0.9*Const.GRID);
 		bandageSpr.setPosition(-0.25*Const.GRID, -0.9*Const.GRID);
@@ -46,6 +48,12 @@ class Player extends Entity {
 
 		frozenSpr.setPosition(-0.25*Const.GRID, -Const.GRID);
 		frozenSpr.alpha = 0.6;
+
+		shoveSpr.anim.registerStateAnim("fxShove", 0, 0.6);
+		shoveSpr.anim.suspend();
+		shoveSpr.setPosition(0.65*Const.GRID, -0.7*Const.GRID);
+		shoveSpr.scaleX = -1.0;
+		spr.addChild(shoveSpr);
 
 		Entity.PLAYERS.push(this);
 	}
@@ -193,6 +201,9 @@ class Player extends Entity {
 			var dx = (closestPlayer.centerX - centerX) / closestDist;
 			var dy = (closestPlayer.centerY - centerY) / closestDist;
 			closestPlayer.bump(dx * Const.PLAYER_SHOVE_PWR, dy * Const.PLAYER_SHOVE_PWR);
+			shoveSpr.anim.unsuspend();
+			shoveSpr.anim.play("fxShove", 1);
+			shoveSpr.anim.stopOnLastFrame();
 			return true;
 		}
 

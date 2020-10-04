@@ -60,13 +60,7 @@ class Main extends dn.Process {
 
 		// Start
 		new dn.heaps.GameFocusHelper(Boot.ME.s2d, Assets.fontMedium);
-
-		#if debug
-		delayer.addF( startGame, 1);
-		#else
 		delayer.addF( startIntro, 1 );
-		#end
-
 		Assets.music.play(true);
 	}
 

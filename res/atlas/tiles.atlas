@@ -27,7 +27,7 @@ empty
   index: -1
 fxBandage
   rotate: false
-  xy: 137, 24
+  xy: 148, 24
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
@@ -41,9 +41,16 @@ fxCircle0
   index: -1
 fxDot0
   rotate: false
-  xy: 170, 31
+  xy: 45, 2
   size: 3, 3
   orig: 3, 3
+  offset: 0, 0
+  index: -1
+fxFreeze
+  rotate: false
+  xy: 94, 18
+  size: 9, 16
+  orig: 9, 16
   offset: 0, 0
   index: -1
 fxImpact0
@@ -97,7 +104,7 @@ fxSmoke0
   index: -1
 fxSweat
   rotate: false
-  xy: 247, 56
+  xy: 58, 12
   size: 5, 6
   orig: 5, 6
   offset: 0, 0
@@ -111,28 +118,42 @@ fxTail0
   index: -1
 itemBoot
   rotate: false
-  xy: 149, 27
+  xy: 171, 27
   size: 9, 7
   orig: 9, 7
   offset: 0, 0
   index: -1
+itemFreeze
+  rotate: false
+  xy: 160, 25
+  size: 9, 9
+  orig: 9, 9
+  offset: 0, 0
+  index: -1
 itemInvisible
   rotate: false
-  xy: 127, 21
+  xy: 138, 21
   size: 8, 13
   orig: 8, 13
   offset: 0, 0
   index: -1
+itemShuffle
+  rotate: false
+  xy: 37, 7
+  size: 9, 9
+  orig: 9, 9
+  offset: 0, 0
+  index: -1
 itemTNT
   rotate: false
-  xy: 37, 6
+  xy: 48, 8
   size: 8, 10
   orig: 8, 10
   offset: 0, 0
   index: -1
 itemTeleport
   rotate: false
-  xy: 116, 19
+  xy: 127, 19
   size: 9, 15
   orig: 9, 15
   offset: 0, 0
@@ -146,14 +167,14 @@ itemTrap
   index: -1
 jammerA
   rotate: false
-  xy: 94, 18
+  xy: 105, 18
   size: 9, 16
   orig: 9, 16
   offset: 0, 0
   index: -1
 jammerB
   rotate: false
-  xy: 105, 18
+  xy: 116, 18
   size: 9, 16
   orig: 9, 16
   offset: 0, 0
@@ -188,7 +209,7 @@ num3
   index: -1
 num4
   rotate: false
-  xy: 168, 36
+  xy: 153, 36
   size: 13, 26
   orig: 13, 26
   offset: 0, 0
@@ -202,14 +223,14 @@ num5
   index: -1
 num6
   rotate: false
-  xy: 138, 36
+  xy: 183, 36
   size: 13, 26
   orig: 13, 26
   offset: 0, 0
   index: -1
 num7
   rotate: false
-  xy: 153, 36
+  xy: 138, 36
   size: 13, 26
   orig: 13, 26
   offset: 0, 0
@@ -223,7 +244,7 @@ num8
   index: -1
 num9
   rotate: false
-  xy: 183, 36
+  xy: 168, 36
   size: 13, 26
   orig: 13, 26
   offset: 0, 0
@@ -237,14 +258,14 @@ pixel
   index: -1
 uiBar
   rotate: false
-  xy: 198, 36
+  xy: 37, 2
   size: 6, 3
   orig: 6, 3
   offset: 0, 0
   index: -1
 uiBarBg
   rotate: false
-  xy: 160, 29
+  xy: 182, 29
   size: 8, 5
   orig: 8, 5
   offset: 0, 0

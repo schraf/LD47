@@ -53,16 +53,25 @@ class Main extends dn.Process {
 		controller.bind(AXIS_LEFT_X_POS, Key.RIGHT, Key.D);
 		controller.bind(AXIS_LEFT_Y_NEG, Key.DOWN, Key.S);
 		controller.bind(AXIS_LEFT_Y_POS, Key.UP, Key.W);
-		controller.bind(X, Key.SPACE, Key.F, Key.E);
-		controller.bind(A, Key.C);
-		controller.bind(B, Key.ENTER, Key.NUMPAD_ENTER);
+		controller.bind(X, Key.Z);
+		controller.bind(A, Key.X);
 		controller.bind(SELECT, Key.R);
 		controller.bind(START, Key.N);
 
 		// Start
 		new dn.heaps.GameFocusHelper(Boot.ME.s2d, Assets.fontMedium);
-		delayer.addF( startGame, 1 );
+
+		#if debug
+		delayer.addF( startGame, 1);
+		#else
+		delayer.addF( startIntro, 1 );
+		#end
+
 		Assets.music.play(true);
+	}
+
+	public function startIntro() {
+		new Intro();
 	}
 
 	public function startGame() {

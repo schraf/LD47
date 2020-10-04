@@ -18,7 +18,7 @@ class LocalPlayerJammer extends Jammer {
   override function update() {
     super.update();
 
-    if (cd.has("bandage"))
+    if (cd.has("bandage") || cd.has("frozen"))
       return;
 
     var dir = level.getTrackDirection(cx, cy);

@@ -64,6 +64,7 @@ class Jammer extends Player {
 				setPosCase(loc.cx, loc.cy);
 				cancelVelocities();
 				Assets.SFX.teleport(1);
+				// Game.ME.camera.recenter(); TODO: only do this on local player jammer
 
 			case Explosion:
 				fx.flashBangS(0xffffff, 0.9);
@@ -91,6 +92,34 @@ class Jammer extends Player {
 			case SpeedTrap:
 				addBandage(Const.ITEM_TRAP_TIME);
 				Assets.SFX.trap(1);
+
+			case Freeze:
+				Assets.SFX.freeze(1);
+				for (player in Entity.PLAYERS) {
+					if (player != this) {
+						player.freeze(Const.ITEM_FREEZE_TIME);
+					}
+				}
+
+			case Shuffle:
+				Assets.SFX.shuffle();
+
+				for (player in Entity.PLAYERS) {
+					var other = Entity.PLAYERS[irnd(0, Entity.PLAYERS.length-1)];
+					if (other != player) {
+						var p = player.makePoint();
+						player.cx = other.cx;
+						player.cy = other.cy;
+						player.xr = other.xr;
+						player.yr = other.yr;
+						other.cx = p.cx;
+						other.cy = p.cy;
+						other.xr = p.xr;
+						other.yr = p.yr;
+						player.cancelVelocities();
+						other.cancelVelocities();
+					}
+				}
 		}
 	}
 

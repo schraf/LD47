@@ -7,15 +7,15 @@ class Level extends dn.Process {
 	public var hei(get,never) : Int; inline function get_hei() return 16;
 
 	var invalidated = true;
-	var track: led.Layer_IntGrid_AutoLayer;
-	var trackDir: led.Layer_IntGrid;
-	var trackTiles: led.Layer_Tiles;
+	var gridLayer: led.Layer_IntGrid_AutoLayer;
+	var dirLayer: led.Layer_IntGrid;
+	var tilesLayer: led.Layer_Tiles;
 	public var itemSpawners: Array<CPoint> = [];
 	public var teleportLocations: Array<CPoint> = [];
 
-	public function new() {
-		super(Game.ME);
-		createRootInLayers(Game.ME.scroller, Const.DP_BG);
+	public function new(parent: dn.Process, ctx: h2d.Layers) {
+		super(parent);
+		createRootInLayers(ctx, Const.DP_BG);
 	}
 
 	public inline function isValid(cx,cy) return cx>=0 && cx<wid && cy>=0 && cy<hei;
@@ -25,9 +25,9 @@ class Level extends dn.Process {
 		var tracks = new Tracks();
 		var trackLayers = tracks.all_levels.Track0;
 		var entities = trackLayers.l_Entities;
-		trackDir = trackLayers.l_Direction;
-		track = trackLayers.l_Track;
-		trackTiles = trackLayers.l_Tiles;
+		dirLayer = trackLayers.l_Direction;
+		gridLayer = trackLayers.l_Track;
+		tilesLayer = trackLayers.l_Tiles;
 
 		for (spawner in entities.all_Spawner) {
 			var role = spawner.f_Role;
@@ -60,11 +60,11 @@ class Level extends dn.Process {
 	}
 
 	public function isCollision (cx: Int, cy: Int): Bool {
-		return track.getInt(cx, cy) == 0;
+		return gridLayer.getInt(cx, cy) == 0;
 	}
 
 	public function getTrackDirection (cx: Int, cy: Int): Enums.TrackDirection {
-		switch (trackDir.getInt(cx, cy)) {
+		switch (dirLayer.getInt(cx, cy)) {
 			case 1: return Enums.TrackDirection.Down;
 			case 2: return Enums.TrackDirection.Left;
 			case 3: return Enums.TrackDirection.Right;
@@ -77,20 +77,25 @@ class Level extends dn.Process {
 	public function render() {
 		root.removeChildren();
 
-		for (autoTile in track.autoTiles) {
-			var tile = Assets.levelTiles[autoTile.tileId];
-			var bitmap = new h2d.Bitmap(tile, root);
-			bitmap.setPosition(autoTile.renderX, autoTile.renderY);
+		if (gridLayer != null) {
+			for (autoTile in gridLayer.autoTiles) {
+				var tile = Assets.levelTiles[autoTile.tileId];
+				var bitmap = new h2d.Bitmap(tile, root);
+				bitmap.setPosition(autoTile.renderX, autoTile.renderY);
+			}
 		}
 
-		for(cx in 0...wid)
-			for(cy in 0...hei) {
-				if (trackTiles.hasTileAt(cx, cy)) {
-					var tile = Assets.levelTiles[trackTiles.getTileIdAt(cx, cy)];
-					var bitmap = new h2d.Bitmap(tile, root);
-					bitmap.setPosition(cx*Const.GRID, cy*Const.GRID);
+		if (tilesLayer != null) {
+			for(cx in 0...wid) {
+				for(cy in 0...hei) {
+					if (tilesLayer.hasTileAt(cx, cy)) {
+						var tile = Assets.levelTiles[tilesLayer.getTileIdAt(cx, cy)];
+						var bitmap = new h2d.Bitmap(tile, root);
+						bitmap.setPosition(cx*Const.GRID, cy*Const.GRID);
+					}
 				}
 			}
+		}
 	}
 
 	override function postUpdate() {

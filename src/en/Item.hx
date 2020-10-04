@@ -16,6 +16,8 @@ class Item extends Entity {
       case Explosion: spr.set("itemTNT");
       case Invisibility: spr.set("itemInvisible");
       case SpeedTrap: spr.set("itemTrap");
+      case Freeze: spr.set("itemFreeze");
+      case Shuffle: spr.set("itemShuffle");
     }
 
     Entity.ITEMS.push(this);
@@ -23,12 +25,6 @@ class Item extends Entity {
 
   override function dispose () {
     super.dispose();
-
-    for (i in 0...Entity.ITEMS.length) {
-      if (Entity.ITEMS[i].uid == uid) {
-        Entity.ITEMS.splice(i, 1);
-        break;
-      }
-    }
+    Entity.ITEMS.remove(this);
   }
 }

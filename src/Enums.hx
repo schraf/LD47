@@ -24,4 +24,6 @@ enum ItemType {
   Explosion;
   Invisibility;
   SpeedTrap;
+  Freeze;
+  Shuffle;
 }

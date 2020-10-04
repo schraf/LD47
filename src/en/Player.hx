@@ -10,6 +10,7 @@ class Player extends Entity {
 	var sweatSpr: HSprite;
 	var boostSpr: HSprite;
 	var bandageSpr: HSprite;
+	var frozenSpr: HSprite;
 
 	public var trackDir(get,never) : TrackDirection; inline function get_trackDir() return level.getTrackDirection(cx, cy);
 
@@ -34,13 +35,19 @@ class Player extends Entity {
 		sweatSpr = new HSprite(Assets.tiles, "fxSweat");
 		boostSpr = new HSprite(Assets.tiles, "fxImpact0");
 		bandageSpr = new HSprite(Assets.tiles, "fxBandage");
+		frozenSpr = new HSprite(Assets.tiles, "fxFreeze");
 
 		sweatSpr.setPosition(0.15*Const.GRID, -0.9*Const.GRID);
-		bandageSpr.setPosition(0.05*Const.GRID, -0.9*Const.GRID);
+		bandageSpr.setPosition(-0.25*Const.GRID, -0.9*Const.GRID);
 
 		boostSpr.setPosition(-0.8*Const.GRID, -0.3*Const.GRID);
 		boostSpr.scale(0.5);
-		boostSpr.alpha = 0.5;
+		boostSpr.alpha = 0.7;
+
+		frozenSpr.setPosition(-0.25*Const.GRID, -Const.GRID);
+		frozenSpr.alpha = 0.6;
+
+		Entity.PLAYERS.push(this);
 	}
 
 	function isInFrontOf (p: Player) {
@@ -72,6 +79,11 @@ class Player extends Entity {
 			return true;
 
 		return false;
+	}
+
+	override function dispose () {
+    super.dispose();
+    Entity.PLAYERS.remove(this);
 	}
 
 	function checkEntityCollision () {
@@ -115,6 +127,15 @@ class Player extends Entity {
 		}
 	}
 
+	public function freeze (s: Float) {
+		if (frozenSpr.parent == null)
+			spr.addChild(frozenSpr);
+
+		cancelVelocities();
+
+		cd.setS("frozen", s, function () frozenSpr.remove());
+	}
+
 	public function addBandage (s: Float) {
 		if (bandageSpr.parent == null)
 			spr.addChild(bandageSpr);
@@ -130,7 +151,7 @@ class Player extends Entity {
 				spr.addChild(sweatSpr);
 				cd.setS("sweat", 0.5, function () sweatSpr.remove());
 			}
-			// TODO: sfx
+
 			return false;
 		}
 
@@ -199,7 +220,7 @@ class Player extends Entity {
 		updateNearbyEntities();
 		checkEntityCollision();
 
-		if (!cd.has("bandage"))
+		if (!cd.has("bandage") && !cd.has("frozen"))
 			stamina = Math.min(stamina + Const.PLAYER_STAM_REGEN, 1.0);
 
 		set_dir(dxTotal < 0.0 ? -1 : 1);

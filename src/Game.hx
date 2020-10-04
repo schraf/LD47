@@ -1,5 +1,3 @@
-import en.Jammer;
-import en.Player;
 import dn.Process;
 import hxd.Key;
 
@@ -26,12 +24,14 @@ class Game extends Process {
 		scroller.filter = new h2d.filter.ColorMatrix(); // force rendering for pixel perfect
 
 		camera = new Camera();
-		level = new Level();
+		level = new Level(this, scroller);
 		fx = new Fx();
 		hud = new ui.Hud();
 
 		level.loadTrack();
 		delayer.addS("itemSpawner", spawnItem, Const.ITEM_SPAWN_TIMER + rnd(0.0, Const.ITEM_SPAWN_RND, true));
+
+		cd.setS("starttime", 5.0);
 
 		Process.resizeAll();
 		trace(Lang.t._("Game is ready."));
@@ -68,7 +68,9 @@ class Game extends Process {
 				Enums.ItemType.Teleport,
 				Enums.ItemType.Explosion,
 				Enums.ItemType.Invisibility,
-				Enums.ItemType.SpeedTrap];
+				Enums.ItemType.SpeedTrap,
+				Enums.ItemType.Freeze,
+				Enums.ItemType.Shuffle];
 			var itemType = itemTypes[irnd(0, itemTypes.length-1)];
 			new en.Item(itemType, idx, spawner.cx, spawner.cy);
 			break;
@@ -117,7 +119,9 @@ class Game extends Process {
 	override function update() {
 		super.update();
 
-		for(e in Entity.ALL) if( !e.destroyed ) e.update();
+		if (!cd.has("starttime")) {
+			for(e in Entity.ALL) if( !e.destroyed ) e.update();
+		}
 
 		if( !ui.Console.ME.isActive() && !ui.Modal.hasAny() ) {
 			#if hl

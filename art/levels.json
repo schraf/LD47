@@ -11,7 +11,7 @@
 	"defaultPivotY": 0,
 	"defaultGridSize": 16,
 	"bgColor": "#7F8093",
-	"nextUid": 33,
+	"nextUid": 34,
 	"minifyJson": false,
 	"exportTiled": false,
 	"defs": {
@@ -1193,7 +1193,7 @@
 					{ "coordId": 472, "v": 4 },
 					{ "coordId": 473, "v": 4 },
 					{ "coordId": 474, "v": 4 },
-					{ "coordId": 475, "v": 0 },
+					{ "coordId": 475, "v": 4 },
 					{ "coordId": 476, "v": 0 },
 					{ "coordId": 477, "v": 0 },
 					{ "coordId": 478, "v": 0 },
@@ -1760,7 +1760,7 @@
 					{ "coordId": 472, "v": 1 },
 					{ "coordId": 473, "v": 1 },
 					{ "coordId": 474, "v": 1 },
-					{ "coordId": 475, "v": 0 },
+					{ "coordId": 475, "v": 1 },
 					{ "coordId": 476, "v": 0 },
 					{ "coordId": 477, "v": 0 },
 					{ "coordId": 478, "v": 0 },
@@ -1979,10 +1979,10 @@
 								"flips": 0
 							},
 							{
-								"__cx": 26,
+								"__cx": 27,
 								"__cy": 14,
-								"coordId": 474,
-								"tiles": [ { "tileId": 4, "__x": 416, "__y": 224, "__srcX": 64, "__srcY": 0 } ],
+								"coordId": 475,
+								"tiles": [ { "tileId": 4, "__x": 432, "__y": 224, "__srcX": 64, "__srcY": 0 } ],
 								"flips": 0
 							}
 						]
@@ -2479,13 +2479,6 @@
 								"flips": 0
 							},
 							{
-								"__cx": 27,
-								"__cy": 13,
-								"coordId": 443,
-								"tiles": [ { "tileId": 62, "__x": 432, "__y": 208, "__srcX": 96, "__srcY": 112 } ],
-								"flips": 0
-							},
-							{
 								"__cx": 28,
 								"__cy": 13,
 								"coordId": 444,
@@ -2567,6 +2560,13 @@
 								"__cy": 14,
 								"coordId": 473,
 								"tiles": [ { "tileId": 61, "__x": 400, "__y": 224, "__srcX": 80, "__srcY": 112 } ],
+								"flips": 0
+							},
+							{
+								"__cx": 26,
+								"__cy": 14,
+								"coordId": 474,
+								"tiles": [ { "tileId": 62, "__x": 416, "__y": 224, "__srcX": 96, "__srcY": 112 } ],
 								"flips": 0
 							}
 						]
@@ -3373,6 +3373,13 @@
 								"__cy": 13,
 								"coordId": 442,
 								"tiles": [ { "tileId": 9, "__x": 416, "__y": 208, "__srcX": 16, "__srcY": 16 } ],
+								"flips": 0
+							},
+							{
+								"__cx": 27,
+								"__cy": 13,
+								"coordId": 443,
+								"tiles": [ { "tileId": 1, "__x": 432, "__y": 208, "__srcX": 16, "__srcY": 0 } ],
 								"flips": 0
 							}
 						]
@@ -5170,13 +5177,6 @@
 								"__cy": 14,
 								"coordId": 461,
 								"tiles": [ { "tileId": 0, "__x": 208, "__y": 224, "__srcX": 0, "__srcY": 0 } ],
-								"flips": 0
-							},
-							{
-								"__cx": 27,
-								"__cy": 14,
-								"coordId": 475,
-								"tiles": [ { "tileId": 16, "__x": 432, "__y": 224, "__srcX": 0, "__srcY": 32 } ],
 								"flips": 0
 							},
 							{

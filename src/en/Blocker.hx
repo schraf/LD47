@@ -9,7 +9,7 @@ class Blocker extends Player {
 	override function update () {
 		super.update();
 
-		if (cd.has("bandage"))
+		if (cd.has("bandage") || cd.has("frozen"))
 			return;
 
 		var nearJammer = false;

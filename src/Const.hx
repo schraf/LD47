@@ -33,6 +33,7 @@ class Const {
 	public static var ITEM_EXPLOSION_PWR = 1.0;
 	public static var ITEM_INVISIBLE_TIME = 4.0;
 	public static var ITEM_TRAP_TIME = 3.0;
+	public static var ITEM_FREEZE_TIME = 3.0;
 
 	static var _uniq = 0;
 	public static var NEXT_UNIQ(get,never) : Int; static inline function get_NEXT_UNIQ() return _uniq++;

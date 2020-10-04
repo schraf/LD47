@@ -4,6 +4,7 @@ class Entity {
 	public static var GC : Array<Entity> = [];
 	public static var SCORES : Map<Enums.Team, en.Score> = new Map<Enums.Team, en.Score>();
 	public static var ITEMS : Array<en.Item> = [];
+	public static var PLAYERS : Array<en.Player> = [];
 
 	public var game(get,never) : Game; inline function get_game() return Game.ME;
 	public var fx(get,never) : Fx; inline function get_fx() return Game.ME.fx;

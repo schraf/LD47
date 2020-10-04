@@ -1,4 +1,5 @@
 # Loop Runners
+[<img align="right" width="100" style="image-rendering: pixelated;" src="art/play.png">](web/index.html)
 
 This is my entry for the [Ludum Dare 47](https://ldjam.com/events/ludum-dare/47) (LD47) Compo challenge. The theme for the event was *Stuck in a Loop*. The game I created is called Loop Runners which takes inspiration from the game of [Roller Berby](https://en.wikipedia.org/wiki/Roller_derby).
 

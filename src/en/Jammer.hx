@@ -8,6 +8,9 @@ class Jammer extends Player {
 	public function new (team: Team, x: Int, y: Int) {
 		super(team, PlayerRole.Jammer, x, y);
 		passed = new Array<Player>();
+		var animName = 'jammer${team == Team.A ? 'A' : 'B'}';
+		spr.anim.registerStateAnim(animName+'.idle', 0, 0.07);
+		spr.anim.registerStateAnim(animName+'.walk', 1, 0.2, function() return (dx != 0 || dy != 0));
 	}
 
 	function onPassedBlocker (blocker: Player) {
@@ -102,7 +105,7 @@ class Jammer extends Player {
 				}
 
 			case Shuffle:
-				Assets.SFX.shuffle();
+				Assets.SFX.shuffle(1);
 
 				for (player in Entity.PLAYERS) {
 					var other = Entity.PLAYERS[irnd(0, Entity.PLAYERS.length-1)];

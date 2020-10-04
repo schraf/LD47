@@ -9,18 +9,27 @@ class Score extends Entity {
     super(x, y);
     team = _team;
     score = 0;
-    flow = new h2d.Flow(spr);
+    flow = new h2d.Flow();
     xr = 0.0;
     yr = 0.0;
+    entityVisible = false;
 
     flow.addChild(new HSprite(Assets.tiles, "num0"));
     flow.addChild(new HSprite(Assets.tiles, "num0"));
     flow.addChild(new HSprite(Assets.tiles, "num0"));
     flow.reverse = true;
 
+    Game.ME.scroller.add(flow, Const.DP_MAIN);
+
     setPixelOff(5, 3);
 
     Entity.SCORES[team] = this;
+  }
+
+  override function postUpdate () {
+    super.postUpdate();
+    flow.x = spr.x;
+    flow.y = spr.y;
   }
 
   public function onScore () {

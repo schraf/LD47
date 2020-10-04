@@ -138,15 +138,6 @@ class Fx extends dn.Process {
 		});
 	}
 
-	public function shove (e: Entity, t: Entity) {
-		var dir = e.centerX >= t.centerX ? -1 : 1;
-		var p = allocTopAdd(getTile(dir > 0 ? "fxShoveR" : "fxShoveL"), e.centerX + dir*0.3*Const.GRID, e.centerY);
-		p.lifeS = 0.1;
-		p.dx = 3.0*dir;
-		p.dy = t.centerY < e.centerY ? -0.2 : 0.2;
-		p.frict = 0.6;
-	}
-
 	public function smoke (e: Entity) {
 		for (i in 0...5) {
 			var p = allocTopAdd(getTile("fxSmoke0"), e.centerX + rnd(0.3, 2.2, true), e.centerY + rnd(0.3, 2.2, true));

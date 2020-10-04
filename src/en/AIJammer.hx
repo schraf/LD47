@@ -3,7 +3,6 @@ package en;
 class AIJammer extends Jammer {
 	public function new(team: Team, x: Int, y: Int) {
 		super(team, x, y);
-		spr.set(Assets.tiles, "jammerB");
 	}
 
 	override function update (){

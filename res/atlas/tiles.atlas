@@ -1,33 +1,131 @@
 
 tiles.png
-size: 256,64
+size: 512,64
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-blockerA
+blockerA.idle0
   rotate: false
-  xy: 216, 41
-  size: 9, 16
-  orig: 9, 16
+  xy: 282, 45
+  size: 9, 17
+  orig: 9, 17
   offset: 0, 0
   index: -1
-blockerB
+blockerA.idle1
   rotate: false
-  xy: 83, 18
-  size: 9, 16
-  orig: 9, 16
+  xy: 293, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+blockerA.walk0
+  rotate: false
+  xy: 326, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+blockerA.walk1
+  rotate: false
+  xy: 381, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+blockerA.walk2
+  rotate: false
+  xy: 392, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+blockerA.walk3
+  rotate: false
+  xy: 403, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+blockerA.walk4
+  rotate: false
+  xy: 414, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+blockerA.walk5
+  rotate: false
+  xy: 425, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+blockerB.idle0
+  rotate: false
+  xy: 447, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+blockerB.idle1
+  rotate: false
+  xy: 458, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+blockerB.walk0
+  rotate: false
+  xy: 469, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+blockerB.walk1
+  rotate: false
+  xy: 227, 40
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+blockerB.walk2
+  rotate: false
+  xy: 238, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+blockerB.walk3
+  rotate: false
+  xy: 249, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+blockerB.walk4
+  rotate: false
+  xy: 304, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+blockerB.walk5
+  rotate: false
+  xy: 260, 45
+  size: 9, 17
+  orig: 9, 17
   offset: 0, 0
   index: -1
 empty
   rotate: false
-  xy: 5, 2
+  xy: 45, 4
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 fxBandage
   rotate: false
-  xy: 148, 24
+  xy: 490, 52
   size: 10, 10
   orig: 10, 10
   offset: 0, 0
@@ -41,14 +139,14 @@ fxCircle0
   index: -1
 fxDot0
   rotate: false
-  xy: 45, 2
+  xy: 233, 59
   size: 3, 3
   orig: 3, 3
   offset: 0, 0
   index: -1
 fxFreeze
   rotate: false
-  xy: 94, 18
+  xy: 216, 41
   size: 9, 16
   orig: 9, 16
   offset: 0, 0
@@ -62,35 +160,77 @@ fxImpact0
   index: -1
 fxLine0
   rotate: false
-  xy: 198, 59
+  xy: 48, 31
   size: 33, 3
   orig: 33, 3
   offset: 0, 0
   index: -1
 fxLineDir0
   rotate: false
-  xy: 48, 31
+  xy: 198, 59
   size: 33, 3
   orig: 33, 3
   offset: 0, 0
   index: -1
-fxShoveL
+fxShove0
   rotate: false
-  xy: 227, 48
+  xy: 71, 2
   size: 4, 9
   orig: 4, 9
   offset: 0, 0
   index: -1
-fxShoveR
+fxShove1
   rotate: false
-  xy: 233, 53
+  xy: 193, 25
+  size: 4, 9
+  orig: 4, 9
+  offset: 0, 0
+  index: -1
+fxShove2
+  rotate: false
+  xy: 77, 3
+  size: 4, 9
+  orig: 4, 9
+  offset: 0, 0
+  index: -1
+fxShove3
+  rotate: false
+  xy: 83, 8
+  size: 4, 9
+  orig: 4, 9
+  offset: 0, 0
+  index: -1
+fxShove4
+  rotate: false
+  xy: 199, 30
+  size: 4, 9
+  orig: 4, 9
+  offset: 0, 0
+  index: -1
+fxShove5
+  rotate: false
+  xy: 65, 2
+  size: 4, 9
+  orig: 4, 9
+  offset: 0, 0
+  index: -1
+fxShove6
+  rotate: false
+  xy: 205, 30
+  size: 4, 9
+  orig: 4, 9
+  offset: 0, 0
+  index: -1
+fxShove7
+  rotate: false
+  xy: 59, 9
   size: 4, 9
   orig: 4, 9
   offset: 0, 0
   index: -1
 fxSmallCircle0
   rotate: false
-  xy: 239, 56
+  xy: 193, 17
   size: 6, 6
   orig: 6, 6
   offset: 0, 0
@@ -104,7 +244,7 @@ fxSmoke0
   index: -1
 fxSweat
   rotate: false
-  xy: 58, 12
+  xy: 76, 14
   size: 5, 6
   orig: 5, 6
   offset: 0, 0
@@ -118,21 +258,21 @@ fxTail0
   index: -1
 itemBoot
   rotate: false
-  xy: 171, 27
+  xy: 65, 13
   size: 9, 7
   orig: 9, 7
   offset: 0, 0
   index: -1
 itemFreeze
   rotate: false
-  xy: 160, 25
+  xy: 48, 9
   size: 9, 9
   orig: 9, 9
   offset: 0, 0
   index: -1
 itemInvisible
   rotate: false
-  xy: 138, 21
+  xy: 480, 49
   size: 8, 13
   orig: 8, 13
   offset: 0, 0
@@ -146,14 +286,14 @@ itemShuffle
   index: -1
 itemTNT
   rotate: false
-  xy: 48, 8
+  xy: 502, 52
   size: 8, 10
   orig: 8, 10
   offset: 0, 0
   index: -1
 itemTeleport
   rotate: false
-  xy: 127, 19
+  xy: 83, 19
   size: 9, 15
   orig: 9, 15
   offset: 0, 0
@@ -165,51 +305,149 @@ itemTrap
   orig: 16, 7
   offset: 0, 0
   index: -1
-jammerA
+jammerA.idle0
   rotate: false
-  xy: 105, 18
-  size: 9, 16
-  orig: 9, 16
+  xy: 337, 45
+  size: 9, 17
+  orig: 9, 17
   offset: 0, 0
   index: -1
-jammerB
+jammerA.idle1
   rotate: false
-  xy: 116, 18
-  size: 9, 16
-  orig: 9, 16
+  xy: 182, 17
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+jammerA.walk0
+  rotate: false
+  xy: 116, 17
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+jammerA.walk1
+  rotate: false
+  xy: 127, 17
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+jammerA.walk2
+  rotate: false
+  xy: 138, 17
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+jammerA.walk3
+  rotate: false
+  xy: 149, 17
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+jammerA.walk4
+  rotate: false
+  xy: 160, 17
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+jammerA.walk5
+  rotate: false
+  xy: 370, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+jammerB.idle0
+  rotate: false
+  xy: 271, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+jammerB.idle1
+  rotate: false
+  xy: 94, 17
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+jammerB.walk0
+  rotate: false
+  xy: 348, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+jammerB.walk1
+  rotate: false
+  xy: 359, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+jammerB.walk2
+  rotate: false
+  xy: 171, 17
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+jammerB.walk3
+  rotate: false
+  xy: 436, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+jammerB.walk4
+  rotate: false
+  xy: 315, 45
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+jammerB.walk5
+  rotate: false
+  xy: 105, 17
+  size: 9, 17
+  orig: 9, 17
   offset: 0, 0
   index: -1
 num0
   rotate: false
-  xy: 63, 36
+  xy: 48, 36
   size: 13, 26
   orig: 13, 26
   offset: 0, 0
   index: -1
 num1
   rotate: false
-  xy: 78, 36
+  xy: 63, 36
   size: 13, 26
   orig: 13, 26
   offset: 0, 0
   index: -1
 num2
   rotate: false
-  xy: 93, 36
+  xy: 78, 36
   size: 13, 26
   orig: 13, 26
   offset: 0, 0
   index: -1
 num3
   rotate: false
-  xy: 108, 36
+  xy: 93, 36
   size: 13, 26
   orig: 13, 26
   offset: 0, 0
   index: -1
 num4
   rotate: false
-  xy: 153, 36
+  xy: 108, 36
   size: 13, 26
   orig: 13, 26
   offset: 0, 0
@@ -223,28 +461,28 @@ num5
   index: -1
 num6
   rotate: false
-  xy: 183, 36
+  xy: 138, 36
   size: 13, 26
   orig: 13, 26
   offset: 0, 0
   index: -1
 num7
   rotate: false
-  xy: 138, 36
+  xy: 153, 36
   size: 13, 26
   orig: 13, 26
   offset: 0, 0
   index: -1
 num8
   rotate: false
-  xy: 48, 36
+  xy: 168, 36
   size: 13, 26
   orig: 13, 26
   offset: 0, 0
   index: -1
 num9
   rotate: false
-  xy: 168, 36
+  xy: 183, 36
   size: 13, 26
   orig: 13, 26
   offset: 0, 0
@@ -265,7 +503,7 @@ uiBar
   index: -1
 uiBarBg
   rotate: false
-  xy: 182, 29
+  xy: 48, 2
   size: 8, 5
   orig: 8, 5
   offset: 0, 0

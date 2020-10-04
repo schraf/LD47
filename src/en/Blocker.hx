@@ -3,7 +3,9 @@ package en;
 class Blocker extends Player {
 	public function new (team: Team, x: Int, y: Int) {
 		super(team, PlayerRole.Blocker, x, y);
-		spr.set(Assets.tiles, team == Team.A ? "blockerA" : "blockerB");
+		var animName = 'blocker${team == Team.A ? 'A' : 'B'}';
+		spr.anim.registerStateAnim(animName+'.idle', 0, 0.07);
+		spr.anim.registerStateAnim(animName+'.walk', 1, 0.2, function() return (dx != 0 || dy != 0));
 	}
 
 	override function update () {

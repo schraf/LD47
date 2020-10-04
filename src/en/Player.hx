@@ -190,7 +190,6 @@ class Player extends Entity {
 
 		if (closestPlayer != null && closestDist <= Const.PLAYER_SHOVE_DIST*Const.GRID && removeStamina(Const.PLAYER_SHOVE_STAM)) {
 			cd.setS("shove", Const.PLAYER_SHOVE_CD);
-			fx.shove(this, closestPlayer);
 			var dx = (closestPlayer.centerX - centerX) / closestDist;
 			var dy = (closestPlayer.centerY - centerY) / closestDist;
 			closestPlayer.bump(dx * Const.PLAYER_SHOVE_PWR, dy * Const.PLAYER_SHOVE_PWR);

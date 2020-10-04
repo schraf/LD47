@@ -7,7 +7,6 @@ class LocalPlayerJammer extends Jammer {
     super(team, x, y);
     ca = Main.ME.controller.createAccess("player");
     Game.ME.camera.trackTarget(this, true);
-    spr.set(Assets.tiles, "jammerA");
   }
 
   override function dispose() {
@@ -45,6 +44,12 @@ class LocalPlayerJammer extends Jammer {
 
     if (ca.isPressed(A)) {
       boost();
+    }
+
+    if (ca.isDown(Y)) {
+      debug('${pretty(dx)} ${pretty(dy)}');
+    } else {
+      debug();
     }
   }
 }
